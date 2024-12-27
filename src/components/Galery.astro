@@ -1,0 +1,183 @@
+<section
+  class="bg-gal pt-[100px] pb-[100px] w-full rounded-tl-[100px] rounded-br-[100px] text-white"
+>
+  <section
+    class="flex p-5 justify-center w-full min-[1150px]:w-[1000px] min-[1500px]:w-[1400px] ml-auto mr-auto gap-5"
+  >
+    <section class="container">
+      <section class="gallery" data-aos="fade-up-right">
+        <section class="gallery__item gallery__item--vert">
+          <img
+            src="https://i.imgur.com/BvLM4eu.jpg"
+            alt=""
+          />
+        </section>
+        <section class="gallery__item gallery__item--vert">
+          <img
+            src="https://i.imgur.com/gmPTULA.jpg"
+            alt=""
+          />
+        </section>
+        <section class="gallery__item gallery__item--lg">
+          <img
+            src="https://i.imgur.com/S3poJpO.jpg"
+            alt=""
+          />
+        </section>
+        <section class="gallery__item gallery__item--lg">
+          <img
+            src="https://i.imgur.com/ZH8PkAD.jpg"
+            alt=""
+          />
+        </section>
+        <section class="gallery__item gallery__item--vert">
+          <img
+            src="https://i.imgur.com/01UdNLG.jpg"
+            alt=""
+          />
+        </section>
+        <section class="gallery__item gallery__item--vert">
+          <img
+            src="https://i.imgur.com/dM4PoPD.jpg"
+            alt=""
+          />
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <!-- Modal -->
+  <section id="imageModal" class="modal" hidden>
+    <span class="modal__close">&times;</span>
+    <img id="modalImage" class="modal__content" />
+  </section>
+
+  <style>
+    .bg-gal {
+      background: linear-gradient(180deg, #1e88e5, #0f4472);
+    }
+
+    .gallery {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-auto-rows: 200px;
+      grid-auto-flow: dense;
+      max-width: 1200px;
+      margin: 10px auto;
+      padding: 0 10px;
+    }
+
+    .gallery__item {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .gallery__item > img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .gallery__item:hover {
+      transform: scale(1.02);
+      transition: 1s;
+    }
+
+    .gallery__item--hor {
+      grid-column: span 1;
+    }
+
+    .gallery__item--vert {
+      grid-row: span 1;
+    }
+
+    .gallery__item--lg {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .modal {
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal[hidden] {
+      display: none;
+    }
+
+    .modal__content {
+      max-width: 90%;
+      max-height: 90%;
+      display: block;
+      margin: 30px auto; /* Elimina márgenes adicionales */
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .gallery__item--hor {
+        grid-column: span 2;
+      }
+
+      .gallery__item--vert {
+        grid-row: span 2;
+      }
+
+      .gallery__item--lg {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+  </style>
+
+  <script>
+    // Asegurar que el modal esté oculto instantáneamente
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Oculta el modal inmediatamente al cargar el script
+
+    // Obtener otros elementos
+    const modalImage = document.getElementById("modalImage");
+    const images = document.querySelectorAll(".gallery__item > img");
+    const closeModal = document.querySelector(".modal__close");
+
+    // Abrir modal al hacer clic en la imagen
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImage.src = img.src;
+      });
+    });
+
+    // Cerrar modal al hacer clic en el botón de cerrar
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Cerrar modal al hacer clic fuera de la imagen
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</section>

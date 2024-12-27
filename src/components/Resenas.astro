@@ -1,0 +1,213 @@
+<section class="pt-[100px] pb-[100px] w-full">
+  <section
+    class="flex p-5 justify-center flex-col w-full min-[1150px]:w-[1000px] min-[1500px]:w-[1400px] ml-auto mr-auto gap-5"
+  >
+    <section class="container">
+      <h2>Reseñas</h2>
+      <section
+        class="card card__primary shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.2)]"
+        data-aos="fade-up-left"
+      >
+        <section class="card__header">
+          <section class="card__header--info">
+            <h3>Juan Camilo Rodríguez</h3>
+            <p>Bogotá</p>
+          </section>
+        </section>
+        <section class="card__body">
+          <h4>Excelente servicio y precios competitivos.</h4>
+          <p>
+            Compré un iPhone 13 Pro y fue una experiencia maravillosa. La
+            atención al cliente es impecable, siempre responden rápido y aclaran
+            cualquier duda. Además, los precios son bastante competitivos en
+            comparación con otras tiendas en Bogotá. Recibí mi pedido a tiempo y
+            el teléfono llegó en perfectas condiciones. ¡Recomendadísimo!
+          </p>
+        </section>
+      </section>
+      <section
+        class="card card__gray shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.2)]"
+        data-aos="fade-up-right"
+      >
+        <section class="card__header">
+          <section class="card__header--info">
+            <h3>María Fernanda López</h3>
+            <p>Medellín</p>
+          </section>
+        </section>
+        <section class="card__body">
+          <h4>Calidad garantizada, 100% confiable.</h4>
+          <p>
+            Vivo en Medellín y estaba buscando un iPhone 14. Encontré esta
+            página y al principio dudé porque nunca había comprado tecnología
+            online, pero la experiencia fue increíble. Los equipos son
+            totalmente originales, tienen garantía, y el envío fue súper rápido.
+            Me mantuvieron informada en cada paso del proceso. Sin duda, volveré
+            a comprar con ellos.
+          </p>
+        </section>
+      </section>
+      <section
+        class="card card__light shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.2)]"
+        data-aos="fade-up"
+      >
+        <section class="card__header">
+          <section class="card__header--info">
+            <h3>Andrés Felipe Ramírez</h3>
+            <p>Cali</p>
+          </section>
+        </section>
+        <section class="card__body">
+          <h4>Productos originales a buen precio.</h4>
+          <p>
+            Después de buscar por semanas, finalmente decidí comprar aquí mi
+            iPhone 12 Mini. Lo que más me gustó fue la variedad de modelos y
+            precios, además de la opción de financiarlo. Vivo en Cali y recibí
+            mi pedido en menos de tres días. El empaque era muy seguro, y el
+            teléfono estaba en perfectas condiciones. Definitivamente los
+            recomiendo a quienes buscan calidad y confianza.
+          </p>
+        </section>
+      </section>
+      <section
+        class="card card__dark shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.2)]"
+        data-aos="fade-up-left"
+      >
+        <section class="card__header">
+          <section class="card__header--info">
+            <h3>Natalia Herrera</h3>
+            <p>Barranquilla</p>
+          </section>
+        </section>
+        <section class="card__body">
+          <h4>Servicio rápido y amable.</h4>
+          <p>
+            ¡Qué buen servicio! Compré un iPhone SE de última generación para mi
+            mamá, y todo salió perfecto. Soy de Barranquilla, y lo que más me
+            sorprendió fue la rapidez del envío y la atención al detalle. El
+            equipo llegó completamente sellado y con su factura. Además, el
+            soporte al cliente fue muy amable al resolver mis dudas sobre
+            métodos de pago. No dudaré en comprar de nuevo aquí.
+          </p>
+        </section>
+      </section>
+      <section
+        class="card card__long shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.2)]"
+        data-aos="fade-up"
+      >
+        <section class="card__header">
+          <section class="card__header--info">
+            <h3>Luis Alberto Torres</h3>
+            <p>Bucaramanga</p>
+          </section>
+        </section>
+        <section class="card__body">
+          <h4>La mejor tienda de iPhones en línea.</h4>
+          <p>
+            Compré un iPhone 15 Pro Max y estoy completamente satisfecho. Vivo
+            en Bucaramanga, y aunque tenía mis dudas sobre comprar en línea, la
+            experiencia fue increíble. El equipo es original y viene con
+            garantía. Lo que más me gustó fue la facilidad para pagar y lo claro
+            que es el proceso de compra. Sin mencionar que llegó en un tiempo
+            récord. ¡Gran servicio!
+          </p>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+<style>
+  :root {
+    --violet: hsl(263, 55%, 52%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --dark-grayish-blue: hsl(217, 19%, 35%);
+    --white: rgb(231, 231, 231);
+    --gray: hsl(0, 0%, 81%);
+    --light-gray: hsl(210, 46%, 95%);
+  }
+
+  .container {
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+  }
+
+  .card {
+    background-color: var(--white);
+    border-radius: 1rem;
+    color: black;
+    padding: 1rem;
+  }
+
+  .card.card__primary {
+    background-color: var(--violet);
+    background-image: url("../assets/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: 88% 0%;
+    color: var(--white);
+  }
+
+  .card.card__primary:hover,
+  .card.card__dark:hover,
+  .card.card__gray:hover,
+  .card__long:hover,
+  .card__light:hover {
+    transform: scale(1.03);
+    transition: 1s;
+  }
+
+  .card.card__gray {
+    background-color: var(--dark-grayish-blue);
+    color: var(--light-gray);
+  }
+
+  .card.card__dark {
+    background-color: var(--dark-blue);
+    color: var(--light-gray);
+  }
+
+  .card__header {
+    display: flex;
+    align-items: center;
+  }
+
+  .card__header--info > p {
+    opacity: 0.5;
+  }
+
+  .card__body h4 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .card__body p {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    padding-top: 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card__primary {
+      grid-column: span 5; /* Ocupa 2 columnas */
+    }
+
+    .card__light {
+      grid-column: span 2; /* Ocupa 1 columna */
+    }
+
+    .card__dark {
+      grid-column: span 2; /* Ocupa 2 columnas */
+    }
+
+    .card__long {
+      grid-row: span 5; /* Ocupa 2 filas */
+      grid-column: span 5; /* Ocupa 1 columna */
+    }
+  }
+</style>

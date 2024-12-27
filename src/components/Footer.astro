@@ -1,0 +1,391 @@
+---
+import LogoNav from "../assets/icon.png";
+import { Image } from "astro:assets";
+---
+
+<div class="flex">
+  <div class="h-2 bg-[#E63946] w-1/5"></div>
+  <div class="h-2 bg-[#1E88E5] w-1/5"></div>
+  <div class="h-2 bg-[#E63946] w-1/5"></div>
+  <div class="h-2 bg-[#1E88E5] w-1/5"></div>
+  <div class="h-2 bg-[#E63946] w-1/5"></div>
+</div>
+<footer class="section footer">
+  <div class="footer__header">
+    <a href="/" class="footer__logo">
+      <Image src={LogoNav} alt="logo" width={100} />
+    </a>
+    <ul class="social">
+      <li class="social__item">
+        <a
+          href="https://www.facebook.com/profile.php?id=100090422681053"
+          target="_blank"
+          class="btn social"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="#E63946"
+            ><path
+              d="M22.5 0c.83 0 1.5.67 1.5 1.5v21c0 .83-.67 1.5-1.5 1.5h-6v-9h3l.75-3.75H16.5v-1.5c0-1.5.75-2.25 2.25-2.25h1.5V3.75h-3c-2.76 0-4.5 2.16-4.5 5.25v2.25h-3V15h3v9H1.5A1.5 1.5 0 0 1 0 22.5v-21C0 .67.67 0 1.5 0h21z"
+            ></path></svg
+          >
+        </a>
+      </li>
+
+      <li class="social__item">
+        <a
+          href="https://api.whatsapp.com/send?phone=573137437180"
+          target="_blank"
+          class="btn social"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="#E63946"
+            ><path
+              d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.64-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"
+            ></path></svg
+          >
+        </a>
+      </li>
+    </ul>
+  </div>
+  <ul class="footer__list">
+    <li class="footer__item active">
+      <a href="/" class="footer__link">Inicio</a>
+    </li>
+    <li class="footer__item">
+      <a href="/Nosotros" class="footer__link">Nosotros</a>
+    </li>
+    <li class="footer__item">
+      <a href="/Producto" class="footer__link">Tienda</a>
+    </li>
+    <li class="footer__item">
+      <a href="/Contact" class="footer__link">Contacto</a>
+    </li>
+  </ul>
+  <div class="footer__copyright">
+    <p class="desc copyright">Best Imports, Todos los Derechos Reservados.</p>
+  </div>
+</footer>
+
+<style>
+  :root {
+    --btn-icon-bg-color: #1ee52f;
+    --btn-icon-border-color: #3fe51e4d;
+    --btn-icon-shadow-color: #35e51e;
+
+    --btn-social-bg-color: transparent;
+    --btn-social-border-color: transparent;
+
+    --footer-border-color: #191d24;
+
+    --link-color: #e63946;
+    --link-hover-color: #e63946;
+    --link-active-color: #e63946;
+
+    --bg-color: #1a1a1a;
+
+    --desc-copyright-color: #e63946;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+    line-height: 1.2;
+  }
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  body {
+    position: relative;
+  }
+  @media screen and (min-width: 768px) {
+    body > .btn.icon {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767.98px) {
+    body > .btn.icon {
+      position: fixed;
+      right: 20px;
+      bottom: 50px;
+      z-index: 99;
+    }
+  }
+  ul {
+    list-style: none;
+  }
+  .section {
+    background-color: var(--bg-color);
+  }
+  .section.footer {
+    padding: 20px 10vw;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+    .section.footer {
+      padding: 20px;
+    }
+  }
+  @media screen and (max-width: 767.98px) {
+    .section.footer {
+      padding: 20px;
+    }
+  }
+  .desc.copyright {
+    font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1440 - 320)));
+    color: var(--desc-copyright-color);
+  }
+  .logo {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 35px;
+    display: block;
+  }
+  .logo a {
+    width: 20px;
+  }
+  .logo.primary {
+    width: 200px;
+    min-width: 200px;
+    height: 35px;
+    min-height: 35px;
+    background: url(https://cdn.worldvectorlogo.com/logos/codepen.svg) no-repeat
+      50% 50% / contain;
+  }
+  a {
+    width: 100px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer__list {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (max-width: 767.98px) {
+    .footer__list {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  .footer__item {
+    width: 100%;
+    flex: 1 1 calc(100% / 6);
+  }
+  .footer__item.active .footer__link {
+    color: var(--link-active-color);
+    text-shadow:
+      0 0 3px #e63946cc,
+      0 0 15px #e6394699;
+  }
+  @media screen and (max-width: 767.98px) {
+    .footer__item {
+      flex: 1 1 calc(100% / 3);
+    }
+  }
+  @media screen and (max-width: 463.98px) {
+    .footer__item {
+      flex: 1 1 calc(100% / 2);
+    }
+  }
+  .footer__link {
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--link-color);
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+  }
+  .footer__link:hover {
+    color: var(--link-hover-color);
+    transition: all 0.3s ease-in-out;
+    text-shadow:
+      0 0 3px #e63946cc,
+      0 0 15px #e6394699;
+  }
+  .footer__link:active {
+    color: var(--link-active-color);
+    text-shadow:
+      0 0 3px #e63946cc,
+      0 0 15px #e6394699;
+  }
+  .footer__header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  @media screen and (max-width: 767.98px) {
+    .footer__header {
+      grid-template-columns: 1fr;
+    }
+  }
+  .footer__header > .btn.icon {
+    position: absolute;
+    right: 0;
+  }
+  @media screen and (max-width: 767.98px) {
+    .footer__header > .btn.icon {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767.98px) {
+    .footer__logo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .footer__copyright {
+    width: 100%;
+    border-top: 1px solid var(--footer-border-color);
+    padding: 20px;
+    text-align: center;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 0;
+    border: 1px solid transparent;
+    background-color: transaprent;
+    cursor: pointer;
+  }
+  .btn.icon {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--btn-icon-bg-color);
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .btn.icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--btn-icon-shadow-color);
+  }
+  .btn.icon:hover::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    border: 2px solid var(--btn-icon-border-color);
+    border-radius: 50%;
+    animation: ripple 1s ease-out infinite;
+    z-index: 0;
+  }
+  .btn.icon::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    transition:
+      width 0.4s ease,
+      height 0.4s ease;
+  }
+  .btn.icon .icon {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+  .btn.icon:hover .icon {
+    transform: scale(1.2);
+  }
+  .btn.social {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    background-color: var(--btn-social-bg-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .btn.social .icon {
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .btn.social:hover .icon {
+    transform: scale(1.2) rotate(360deg);
+  }
+  .btn.social::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--btn-social-border-color);
+    z-index: 0;
+    transform: scale(1);
+    opacity: 0;
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease;
+  }
+  .btn.social:hover::after {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    gap: 20px;
+  }
+  .icon {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    min-height: 24px;
+    object-fit: contain;
+    display: block;
+  }
+</style>

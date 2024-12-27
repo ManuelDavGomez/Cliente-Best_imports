@@ -1,0 +1,52 @@
+<section class="hero">
+  <div class="hero-content">
+    <h2>Bienvenido a <span class="font-bold">Best Imports</span></h2>
+    <p>
+      ¡Somos distribuidores autorizados y tenemos lo que necesitas! No pierdas
+      la oportunidad de obtener el tuyo con total confianza. ¿Qué esperas para
+      hacer tu pedido y disfrutar de productos de calidad? ✅
+    </p>
+  </div>
+</section>
+
+<style>
+  .hero {
+    height: 90vh;
+    background-image: url("../assets/hero.jfif"); /* Cambia por tu URL */
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Oscurece la imagen de fondo */
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  h2 {
+
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 0px auto 0px auto;
+  }
+</style>

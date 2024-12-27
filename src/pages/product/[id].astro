@@ -1,0 +1,181 @@
+---
+import { PRODUCTS } from "../../data/product.js";
+import Layout from "../../layouts/Layout.astro";
+import QuantitySelector from "../../components/QuantitySelector.jsx"; // Componente React
+
+export async function getStaticPaths() {
+  return PRODUCTS.map((product) => ({
+    params: { id: product.id.toString() },
+  }));
+}
+
+const { id } = Astro.params;
+const product = PRODUCTS.find((item) => item.id === parseInt(id));
+
+if (!product) {
+  throw new Error("Producto no encontrado.");
+}
+
+// Configura tu número de WhatsApp
+const whatsappNumber = "573137437180"; // Cambia a tu número en formato internacional
+---
+
+<Layout title={`Best Imports - ${product.productName}`}>
+  <section class="pt-[150px] pb-[150px] w-full">
+    <section
+      class="flex items-center justify-start w-[80%] mx-auto min-[1150px]:w-[1000px] min-[1500px]:w-[1400px]"
+    >
+      <a href="/Producto">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#B4313B"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"></path></svg
+        >
+      </a>
+      <a href="/Producto">
+        <p>Volver</p>
+      </a>
+    </section>
+
+    <section
+      class="p-5 flex flex-col items-center justify-center w-full min-[1150px]:w-[1000px] min-[1500px]:w-[1400px] ml-auto mr-auto gap-5"
+    >
+      <section class="container_general w-full">
+        <h1 class="text-center mb-1">{product.productName}</h1>
+        <h2 class="Title text-center mb-10">Detalles del Producto</h2>
+        <article
+          class="flex flex-col items-center justify-center lg:flex-row gap-8"
+        >
+          {/* Imagen principal */}
+          <section
+            class="w-full lg:w-[45%]"
+            data-aos="fade-up-right"
+            data-aos-delay="300"
+          >
+            {/* Galería de imágenes */}
+            <div class="flex justify-center items-center mb-9">
+              <img
+                id="mainImage"
+                src={product.productImg}
+                alt={product.productName}
+                loading="lazy"
+                class="w-full h-auto object-cover rounded-md max-w-[500px] mb-4 lg:mb-0 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(0,0,0,0.15)]"
+              />
+            </div>
+            {/* Imágenes adicionales del producto */}
+            <div class="flex flex-wrap gap-4 justify-center items-center">
+              {
+                product.productImages?.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    loading="lazy"
+                    alt={`Imagen adicional ${index + 1}`}
+                    class="w-[80px] h-[80px] object-cover rounded-md cursor-pointer "
+                    onClick={() =>
+                      (document.getElementById("mainImage").src = img)
+                    }
+                  />
+                ))
+              }
+            </div>
+          </section>
+
+          {/* Información del producto */}
+          <section
+            class="w-full lg:w-1/2 mt-8 flex items-start flex-col"
+            data-aos="fade-up-left"
+            data-aos-delay="300"
+          >
+            <p class="Text mb-5">Categoría: {product.categoria}</p>
+
+            <p class="Text pb-3">
+              {product.description}
+            </p>
+
+            <p class="Text">Precio: ${product.price.toLocaleString()}</p>
+
+            <section>
+              {
+                product.colors && (
+                  <div class="mt-6">
+                    <h3 class="Texts">
+                      <span>Colores Disponibles</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-4 mt-2">
+                      {product.colors.map((color, index) => (
+                        <div key={index} class="flex items-center gap-2">
+                          <div
+                            class="w-8 h-8 rounded-full"
+                            style={{ backgroundColor: color.hex }}
+                          />
+                          <span>{color.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              }
+            </section>
+
+            {/* Componente React para manejar la cantidad */}
+            <div class="mt-6">
+              <QuantitySelector
+                client:load
+                productName={product.productName}
+                productPrice={product.price}
+                whatsappNumber={whatsappNumber}
+              />
+            </div>
+          </section>
+        </article>
+      </section>
+
+      <h4 class="mt-6">Descripcion del Producto</h4>
+
+      <section class="container_general w-full">
+        <p class="Text">{product.descriptionProduct}</p>
+      </section>
+    </section>
+  </section>
+</Layout>
+
+<script>
+  function initializeImageSwitcher() {
+    const mainImage = document.getElementById("mainImage");
+    const thumbnails = document.querySelectorAll(".cursor-pointer");
+
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener("click", () => {
+        mainImage.classList.add("opacity-0");
+        setTimeout(() => {
+          mainImage.src = thumbnail.src;
+          mainImage.classList.remove("opacity-0");
+        }, 500);
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initializeImageSwitcher);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      initializeImageSwitcher();
+    }
+  });
+</script>
+
+<style>
+  .transition-opacity {
+    transition: opacity 0.5s ease-in-out;
+  }
+  .opacity-0 {
+    opacity: 0;
+  }
+</style>

@@ -1,0 +1,14 @@
+---
+import Products from "../components/Producto/Products.jsx";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Best Imports - Productos">
+  <section class="pt-[100px] pb-[100px] w-full">
+    <section
+      class="flex p-5 justify-center w-full min-[1150px]:w-[1000px] min-[1500px]:w-[1400px] ml-auto mr-auto gap-5 "
+    >
+      <Products client:load />
+    </section>
+  </section>
+</Layout>

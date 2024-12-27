@@ -1,0 +1,100 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import "@fontsource/poppins";
+import "@fontsource/lato";
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "aos/dist/aos.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+  <script>
+    import AOS from "aos";
+    AOS.init({
+      once: true,
+    });
+  </script>
+</html>
+<style is:global>
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+  }
+
+  :root {
+    background-color: #ffffff;
+    background-image: url("https://digitalforge.qa/images/codepen/bg-page-section.png");
+    overflow-x: hidden;
+    scrollbar-color: #b4313b #1a1a1a;
+    scrollbar-width: thin;
+  }
+
+  body{
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
+
+  p {
+    font-family: "lato", sans-serif;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 45px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  h4 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  h6 {
+    font-size: 20px;
+  }
+</style>
