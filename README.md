@@ -26,7 +26,7 @@ Dentro de tu proyecto Astro, verás las siguientes carpetas y archivos:
 - **Estilo:** TailwindCSS - Css Puro
 - **Lógica de Backend:** Node.js - Express
 - **Base de Datos:** Mongodb
-- **Integraciones:** WhatsApp API - AOSJS
+- **Integraciones:** WhatsApp API - AOS.JS
 
 ## 🚀 Características
 
